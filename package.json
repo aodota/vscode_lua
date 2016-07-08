@@ -1,18 +1,18 @@
 {
     "name": "lua",
-    "displayName": "Lua",
-    "description": "lua",
+    "displayName": "Lua Ext",
+    "description": "lua ext, support symbols",
     "version": "0.0.1",
     "publisher": "will",
     "engines": {
         "vscode": "^1.0.0"
     },
     "categories": [
-        "Other"
+        "Languages"
     ],
     "activationEvents": [
-        "onLanguage:lua",
-        "onCommand:extension.sayHello"
+        "onLanguage:lua"
+        //"onCommand:extension.sayHello"
     ],
     "main": "./out/src/extension",
     "contributes": {
