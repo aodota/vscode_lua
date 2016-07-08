@@ -3,10 +3,7 @@
 import * as vscode from 'vscode';
 
 var parser = require("luaparse");
-var funslist = [];
-var calls = [];
-var symbols = [];
-var classes = [];
+
 var hasClass:boolean = false;
 export class LuaSymbolProvider implements vscode.DocumentSymbolProvider {
     private context: vscode.ExtensionContext;
@@ -20,7 +17,7 @@ export class LuaSymbolProvider implements vscode.DocumentSymbolProvider {
             var source = document.getText();
             var result = parser.parse(source, {comments:false, locations:true, ranges:true, scope:true});
             // console.log(JSON.stringify(result))
-            
+            var symbols = [];
             for (var i = 0; i < result.body.length; i++) {
                 var type = result.body[i].type;
                 if (type == "FunctionDeclaration") {
